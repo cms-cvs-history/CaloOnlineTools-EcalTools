@@ -13,9 +13,14 @@ module ecalMipGraphs = EcalMipGraphs{
       # masked EBids
       #untracked vint32 maskedEBs = {-1}
 
-      # add parameter for the amplitude threshold
+      # parameter for the amplitude threshold
       untracked double amplitudeThreshold = 12
 
-      # add parameter for the name of the output root file with TH1F
+      # parameter for the name of the output root file with TH1F
       untracked string fileName = 'ecalMipGraphs-'
+
+      # parameter for size of the square matrix, i.e.,
+      # should the seed be at the center of a 3x3 matrix, a 5x5, etc.
+      # must be an odd number (default is 3)
+      #untracked int32 side = 3 
 }
