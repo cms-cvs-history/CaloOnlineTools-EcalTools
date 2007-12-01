@@ -1,0 +1,20 @@
+module ecalPedHists = EcalPedHists {
+
+      # selection on EB+- numbering
+      untracked vstring listEBs = {}
+      
+      # selection on FED number (601...654); -1 selects all 
+      untracked vint32 listFEDs = {-1}
+
+      # specify list of channels to be dumped
+      # outputs all channels if not specified
+      untracked vint32  listChannels = {1,2,3,4,5,6,7,8,9,10}
+
+      # sepecify list of samples to use
+      untracked vint32 listSamples = {1,2,3}
+
+      untracked string fileName =  'ecalPedHists'
+      InputTag EBdigiCollection = ecalEBunpacker:ebDigis
+      InputTag EEdigiCollection = ecalEBunpacker:eeDigis
+      InputTag headerProducer = ecalEBunpacker
+}
