@@ -11,7 +11,7 @@ module ecalMipGraphs = EcalMipGraphs{
       #untracked vint32 maskedFEDs = {-1}
 
       # masked EBids
-      #untracked vint32 maskedEBs = {-1}
+      #untracked vstring maskedEBs = {"-1"}
 
       # parameter for the amplitude threshold
       untracked double amplitudeThreshold = 12
