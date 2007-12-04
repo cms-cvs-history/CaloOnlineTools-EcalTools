@@ -1,0 +1,30 @@
+module digi = EcalDigiDisplay {
+
+	string ebDigiCollection = 'ebDigis' 
+        string eeDigiCollection = 'eeDigis'
+        string digiProducer     = 'ecalEBunpacker'	
+
+	# requested FEDs
+	untracked vint32 requestedFeds = {630}
+
+	# requested EBs 
+	untracked vstring requestedEbs = {"EB+03"}
+
+	untracked bool cryDigi      = true
+        untracked bool ttDigi       = false
+        untracked bool pnDigi       = false
+        untracked bool tpDigi       = false
+        untracked bool fedIsGiven   = true
+        untracked bool ebIsGiven    = false
+	
+	untracked int32 mode = 1
+	#if mode is 1 specify these paprameters
+	untracked int32 numChannel = 31
+	untracked int32 numPN          = 1
+
+        # if mode is 2 specify these otherparameters
+	 untracked vint32  listChannels = { 31 }
+         untracked vint32  listTowers = { -1 }
+	 untracked vint32  listPns = { 1 }
+      
+}
