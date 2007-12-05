@@ -5,13 +5,13 @@ module ecalMipGraphs = EcalMipGraphs{
 
       # use hash index to mask channels
       # add a simple description of hashIndex (hhahhahhh...)
-      #untracked vint32 maskedChannels           = {30641}
+      untracked vint32 maskedChannels           = {}
 
       # masked FEDs
-      #untracked vint32 maskedFEDs = {-1}
+      untracked vint32 maskedFEDs = {-1}
 
       # masked EBids
-      #untracked vstring maskedEBs = {"-1"}
+      untracked vstring maskedEBs = {"-1"}
 
       # parameter for the amplitude threshold
       untracked double amplitudeThreshold = 12
@@ -22,5 +22,8 @@ module ecalMipGraphs = EcalMipGraphs{
       # parameter for size of the square matrix, i.e.,
       # should the seed be at the center of a 3x3 matrix, a 5x5, etc.
       # must be an odd number (default is 3)
-      #untracked int32 side = 3 
+      untracked int32 side = 3 
+
+      # parameter for fixed crystal mode (use hashedIndex)
+      untracked int32 seedCry = 0
 }
