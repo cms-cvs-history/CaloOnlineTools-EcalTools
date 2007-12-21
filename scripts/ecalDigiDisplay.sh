@@ -40,14 +40,14 @@ echo ""
 echo "      -f|--first_ev         f_ev            first (as written to file) event that will be analyzed; default is 1"
 echo "      -l|--last_ev          l_ev            last  (as written to file) event that will be analyzed; default is 9999"
 echo "      -m|--mode             mode            dimping mode, options 1 or 2;  default is 1"
-echo "      -fed|--fed_id          fed_id         select FED id (601...654); default is all"
+echo "      -fed|--fed_id         fed_id         select FED id (601...654); default is all"
 echo "      -eb|--ieb_id          ieb_id          selects sm barrel id; you must enter following way: EE-09 / EB-07 / EB+15 / EE+04 / ; default is all"
 echo "      -cry|--cryDigi        ic              digis from channel ic will be shown"
 echo "      -tt|--Tower           tt              digis from channel whole tower tt will be shown; For EE it referts ot Chanles from DCC, also called as Super Crystal" 
 echo "      -pn|--pnDigi          pd_id           digis from pn number pd_id will be shown"
 
 echo ""
-echo ""
+echo "To specify multiple fed_id's/ieb_id's/cry's/pn's  use a comma-separated list in between double quotes, e.g., \"1,2,3\" "
 exit
 
 fi
@@ -79,52 +79,52 @@ last_event=9999
 
 
 
-  while [ $# -gt 0 ]; do    # FinchÅÈ ci sono parametri . . .
+while [ $# -gt 0 ]; do    # FinchÅÈ ci sono parametri . . .
     case "$1" in
+	
+	-p|--path_file)
+	    data_path="$2"
+	    ;;
+	
+	
+	-f|--first_ev)
+	    first_event="$2"
+	    ;;
+	
 
-      -p|--path_file)
-                data_path="$2"
-                ;;
+	-l|--last_ev)
+	    last_event="$2"
+	    ;;
+	
+	-m|--mode)
+	    mode="$2"
+	    ;;
+	
+	-fed|--fed)
+	    fed="$2"
+	    ;;
 
-
-      -f|--first_ev)
-                first_event="$2"
-                ;;
-
-
-      -l|--last_ev)
-                last_event="$2"
-                ;;
-      
-      -m|--mode)
-	        mode="$2"
-		;;
-
-      -fed|--fed)
-	        fed="$2"
-		;;
-
-      -eb|--ieb_id)
-                ieb="$2"
-                ;;
-
-      -cry|--cryDigi)
-                cry_ic="$2"
-                cryString="true"
-                ;;
-
-      -tt|--triggerTower)
-                tt_id="$2"
-                towerString="true"
-                cryString="true"
-                ;;
-
-      -pn|--pnDigi)
-                pn_num="$2"
-		pnString="true"
-                ;;
-
-
+	-eb|--ieb_id)
+	    ieb="$2"
+	    ;;
+	
+	-cry|--cryDigi)
+	    cry_ic="$2"
+	    cryString="true"
+	    ;;
+	
+	-tt|--triggerTower)
+	    tt_id="$2"
+	    towerString="true"
+	    cryString="true"
+	    ;;
+	
+	-pn|--pnDigi)
+	    pn_num="$2"
+	    pnString="true"
+	    ;;
+	
+	
     esac
     shift       # Verifica la serie successiva di parametri.
 
@@ -195,8 +195,8 @@ include "EventFilter/EcalRawToDigiDev/data/EcalUnpackerData.cfi"
         # ECAL numbering { EE_02,..,EB-15,..,EB+07,..,EE+09 }
         # if not specified or value set to -1, no selection will be applied
       
-     replace ecalDigiDisplay.requestedFeds = {$fed}
-     replace ecalDigiDisplay.requestedEbs  = {$ieb}
+     replace ecalDigiDisplay.requestedFeds = {${fed}}
+     replace ecalDigiDisplay.requestedEbs  = {"${ieb}"}
 
      replace ecalDigiDisplay.cryDigi  = $cryString     
      replace ecalDigiDisplay.ttDigi   = $towerString
