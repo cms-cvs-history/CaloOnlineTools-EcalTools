@@ -14,14 +14,10 @@ module ecalDigiDisplay = EcalDigiDisplay {
         untracked bool ttDigi       = false
         untracked bool pnDigi       = false
 	
-	untracked int32 mode = 1
-	#if mode is 1 specify these paprameters
-	untracked int32 numChannel = -1
-	untracked int32 numPN      = -1
-
-        # if mode is 2 specify these otherparameters
-	 untracked vint32  listChannels = { -1 }
-         untracked vint32  listTowers = { -1 }
-	 untracked vint32  listPns = { -1 }
+	untracked int32 mode = 2
+      
+	untracked vint32  listChannels = { -1 }
+        untracked vint32  listTowers = { -1 }
+	untracked vint32  listPns = { -1 }
       
 }
