@@ -3,7 +3,8 @@ void DrawGraphs()
   counter++;
   eventsAndCrysNtuple->GetEntry(counter);
 
-  cout<<"moving to the event: "<< lv1a <<endl;
+  cout<<"moving to the event: "<< lv1a <<
+    " FED:" << fed << " ic:" << ic << endl;
 
   the_event = IntToString(lv1a);
   can.Clear();
