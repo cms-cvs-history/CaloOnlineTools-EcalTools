@@ -1,12 +1,12 @@
-void DrawGraphs()
+void DrawGraphsPrev()
 {
-  counter++;
+  counter--;
   eventsAndCrysNtuple->GetEntry(counter);
 
-  if(counter==eventsAndCrysNtuple->GetEntries())
+  if(counter==-1)
   {
-    cout << "Last set of TGraphs found." << endl;
-    counter--;
+    cout << "First set of TGraphs found." << endl;
+    counter++;
     return;
   }
   
