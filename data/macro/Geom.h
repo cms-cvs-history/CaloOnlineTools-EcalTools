@@ -2,8 +2,8 @@
 //
 // Class which manages geometry information of the super-module
 //
-// last change : $Date: 2007/06/26 21:06:15 $
-// by          : $Author: franzoni $
+// last change : $Date: 2007/12/01 17:57:20 $
+// by          : $Author: scooper $
 //
 
 #ifndef H4Geom_H
@@ -11,7 +11,6 @@
 
 
 #include <string>
-using namespace std;
 
 class H4Geom
 {
