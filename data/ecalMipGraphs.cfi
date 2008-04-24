@@ -1,8 +1,10 @@
 module ecalMipGraphs = EcalMipGraphs{
 
-      InputTag EcalUncalibratedRecHitCollection = ecalUncalibHit:EcalUncalibRecHitsEB
+      InputTag EcalUncalibratedRecHitCollectionEB = ecalUncalibHit:EcalUncalibRecHitsEB
+      InputTag EcalUncalibratedRecHitCollectionEE = ecalUncalibHit:EcalUncalibRecHitsEE
       InputTag EBDigiCollection                   = ecalEBunpacker:ebDigis
-      InputTag headerProducer                   = ecalEBunpacker
+      InputTag EEDigiCollection                   = ecalEBunpacker:eeDigis
+      InputTag headerProducer                     = ecalEBunpacker
 
       # use hash index to mask channels
       # add a simple description of hashIndex (hhahhahhh...)
