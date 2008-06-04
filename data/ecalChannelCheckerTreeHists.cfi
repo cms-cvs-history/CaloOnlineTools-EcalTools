@@ -1,0 +1,8 @@
+module ecalChannelCheckerTreeHists = EcalChannelCheckerTreeHists{
+
+      InputTag EBDigiCollection                   = ecalEBunpacker:ebDigis
+      InputTag EBUncalibratedRecHitCollection = ecalUncalibHit:EcalUncalibRecHitsEB
+      InputTag headerProducer                   = ecalEBunpacker
+
+	untracked uint32 gain = 12
+}
