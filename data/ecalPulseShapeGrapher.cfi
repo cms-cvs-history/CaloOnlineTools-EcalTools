@@ -1,0 +1,9 @@
+module ecalPulseShapeGrapher = EcalPulseShapeGrapher { 
+    InputTag EBUncalibratedRecHitCollection = ecalUncalibHit:EcalUncalibRecHitsEB
+    InputTag EBDigiCollection = ecalEBunpacker:ebDigis
+    InputTag EEUncalibratedRecHitCollection = ecalUncalibHit:EcalUncalibRecHitsEE
+    InputTag EEDigiCollection = ecalEBunpacker:eeDigis
+    untracked vint32 listChannels = {42803,28472,49867,8108,56473,53845,1896,56264,53316,53677,53678}
+    untracked int32 AmplitudeCutADC = 13
+    untracked string rootFilename = "ecalPulseShapeGrapher"
+}
