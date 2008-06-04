@@ -1,0 +1,8 @@
+module skimming = EcalHighEnCosmicFilter
+{
+ untracked double energycut = 10.0 
+ //basic cluster energy threshold in GeV
+
+ InputTag barrelClusterCollection = cosmicBasicClusters:CosmicBarrelBasicClusters
+ InputTag endcapClusterCollection = cosmicBasicClusters:CosmicEndcapBasicClusters
+}
