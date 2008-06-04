@@ -1,10 +1,10 @@
 module ecalMipGraphs = EcalMipGraphs{
 
-      InputTag EcalUncalibratedRecHitCollectionEB = ecalUncalibHit:EcalUncalibRecHitsEB
-      InputTag EcalUncalibratedRecHitCollectionEE = ecalUncalibHit:EcalUncalibRecHitsEE
+      InputTag EcalRecHitCollectionEB = ecalRecHit:EcalRecHitsEB
+      InputTag EcalRecHitCollectionEE = ecalRecHit:EcalRecHitsEE
       InputTag EBDigiCollection                   = ecalEBunpacker:ebDigis
       InputTag EEDigiCollection                   = ecalEBunpacker:eeDigis
-      InputTag headerProducer                     = ecalEBunpacker
+      InputTag headerProducer                   = ecalEBunpacker
 
       # use hash index to mask channels
       # add a simple description of hashIndex (hhahhahhh...)
@@ -16,8 +16,8 @@ module ecalMipGraphs = EcalMipGraphs{
       # masked EBids
       untracked vstring maskedEBs = {"-1"}
 
-      # parameter for the amplitude threshold
-      untracked double amplitudeThreshold = 12
+      # parameter for the energy threshold
+      untracked double amplitudeThreshold = .110
 
       # parameter for the name of the output root file with TH1F
       untracked string fileName = 'ecalMipGraphs-'
