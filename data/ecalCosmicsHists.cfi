@@ -1,0 +1,41 @@
+module ecalCosmicsHists = EcalCosmicsHists{
+
+      InputTag ecalRecHitCollection = ecalRecHit:EcalRecHitsEB
+	  
+      InputTag endcapClusterCollection      = cosmicBasicClusters:CosmicEndcapBasicClusters
+      InputTag barrelClusterCollection      = cosmicBasicClusters:CosmicBarrelBasicClusters
+	  
+
+      # use hash index to mask channels
+      # add a simple description of hashIndex (hhahhahhh...)
+      untracked vint32 maskedChannels           = {}
+
+      # masked FEDs
+      untracked vint32 maskedFEDs = {-1}
+
+      # masked EBids
+      untracked vstring maskedEBs = {"-1"}
+
+      # parameter to specify histogram maxmimum range
+      untracked double histogramMaxRange = 1.8
+
+      # parameter to specify histogram minimum range
+
+      untracked double histogramMinRange = 0.0
+   
+      # parameter for the name of the output root file with TH1F
+      untracked string fileName = 'EcalCosmicsHists'
+   
+    
+      # for filling timing histograms
+
+      untracked double MinTimingAmp = 0.100
+
+      # Global trigger tag
+      string l1GlobalReadoutRecord = "gtDigis"
+
+      # Track associator
+      include "TrackingTools/TrackAssociator/data/default.cfi"
+
+
+}
