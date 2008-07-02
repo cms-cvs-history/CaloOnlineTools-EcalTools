@@ -1,3 +1,0 @@
-module ecalDccHeaderDisplay = EcalDCCHeaderDisplay{ 
-      InputTag EcalDCCHeaderCollection = ecalEBunpacker:
-}
