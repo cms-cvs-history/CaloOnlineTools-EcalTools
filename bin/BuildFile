@@ -1,0 +1,4 @@
+<bin name=TPGTreeReader file="TPGTreeReader.cpp">
+  <use name=CaloOnlineTools/EcalTools>
+  <flags LCGDICT_ARGS="--deep">
+</bin>
