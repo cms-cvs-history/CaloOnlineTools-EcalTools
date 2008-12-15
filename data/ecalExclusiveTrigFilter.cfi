@@ -1,5 +1,0 @@
-module ecalExclusiveTrigFilter = EcalExclusiveTrigFilter{
-
-      # Global trigger tag
-      string l1GlobalReadoutRecord = "gtDigis"
-}
